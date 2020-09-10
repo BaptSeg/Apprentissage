@@ -31,6 +31,9 @@ app.use(session({
     cookie: { secure: false }
 }))
 
+// Middleware perso (flash), pour afficher une erreur
+app.use(require("./middlewares/flash"))
+
 
 
 
@@ -40,10 +43,6 @@ app.use(session({
  */
 // Lorsque tu seras sur la racine, tu renderas le fichier index et tu enverras la variable test
 app.get("/", (request, response) => {
-    if (request.session.error) {
-        response.locals.error = request.session.error
-        request.session.error = undefined
-    }
     response.render('pages/index')
 })
 
@@ -51,8 +50,10 @@ app.get("/", (request, response) => {
 app.post('/', (request, response) => {
     if (request.body.message === undefined || request.body.message === '' ) {
         // Comme on a chargé le mdidlewear espress-session, on peut utiliser .session
-        request.session.error = "Vous n'avez pas entré de message"
+        request.flash('error', "Vous n'avez pas entré de message")
         response.redirect('/')
+    } else {
+
     }
 })
 
