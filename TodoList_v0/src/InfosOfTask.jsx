@@ -23,6 +23,10 @@ function InfosOfTask ({tache, handleClose, handleModify}) {
         handleClose({consult: false, id: null})
     }
 
+    function isDisabled() {
+        return !(newPriority <= 10) && (newPriority >= 0)
+    }
+
     return <div className="card">
         <div className="card-body">
             <div className="d-flex justify-content-between align-items-center">
@@ -38,7 +42,7 @@ function InfosOfTask ({tache, handleClose, handleModify}) {
                 <input className="form-control" type="number" min="0" max="10" name="priority" id="priority" placeholder="Une valeur entre 0 et 10" value={newPriority} onChange={handleNewPriority}/>
 
                 <div className="text-center mt-4">
-                    <button className="btn btn-success" onClick={handleSubmit}>Valider les modifications</button>
+                    <button className="btn btn-success" onClick={handleSubmit} disabled={isDisabled}>Valider les modifications</button>
                 </div>
             </div>
         </div>

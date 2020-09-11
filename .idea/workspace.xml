@@ -13,14 +13,10 @@
     <list default="true" id="4884e158-a1b0-4c46-97d6-ea7e7a8cdd90" name="Default Changelist" comment="Premier commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TodoList_v0/.cache/24/01df17935c9cf0e35f2ca838e7da51.json" beforeDir="false" afterPath="$PROJECT_DIR$/TodoList_v0/.cache/24/01df17935c9cf0e35f2ca838e7da51.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoList_v0/.cache/3c/86886642476857dfb85f5454828f1d.json" beforeDir="false" afterPath="$PROJECT_DIR$/TodoList_v0/.cache/3c/86886642476857dfb85f5454828f1d.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TodoList_v0/.cache/75/b2d9bed32804bc9f3ba37ece7a3180.json" beforeDir="false" afterPath="$PROJECT_DIR$/TodoList_v0/.cache/75/b2d9bed32804bc9f3ba37ece7a3180.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoList_v0/.cache/ff/da4465d840991643bdea3a30c40e03.json" beforeDir="false" afterPath="$PROJECT_DIR$/TodoList_v0/.cache/ff/da4465d840991643bdea3a30c40e03.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TodoList_v0/dist/src.6ebfba02.js" beforeDir="false" afterPath="$PROJECT_DIR$/TodoList_v0/dist/src.6ebfba02.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TodoList_v0/dist/src.6ebfba02.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/TodoList_v0/dist/src.6ebfba02.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TodoList_v0/src/InfosOfTask.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/TodoList_v0/src/InfosOfTask.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoList_v0/src/Task.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/TodoList_v0/src/Task.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoList_v0/src/TaskStore.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/TodoList_v0/src/TaskStore.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +50,7 @@
       <updated>1599725188069</updated>
       <workItem from="1599725189115" duration="673000" />
       <workItem from="1599808879079" duration="1849000" />
-      <workItem from="1599810728899" duration="17681000" />
+      <workItem from="1599810728899" duration="18268000" />
     </task>
     <task id="LOCAL-00001" summary="Premier commit">
       <created>1599725369370</created>

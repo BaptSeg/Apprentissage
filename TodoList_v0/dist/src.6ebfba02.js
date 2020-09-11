@@ -28566,6 +28566,10 @@ function InfosOfTask(_ref) {
     });
   }
 
+  function isDisabled() {
+    return !(newPriority <= 10) && newPriority >= 0;
+  }
+
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "card"
   }, /*#__PURE__*/_react.default.createElement("div", {
@@ -28604,7 +28608,8 @@ function InfosOfTask(_ref) {
     className: "text-center mt-4"
   }, /*#__PURE__*/_react.default.createElement("button", {
     className: "btn btn-success",
-    onClick: handleSubmit
+    onClick: handleSubmit,
+    disabled: isDisabled
   }, "Valider les modifications")))));
 }
 
@@ -28833,7 +28838,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "34135" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42939" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
