@@ -28389,6 +28389,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 function Task(_ref) {
   var id = _ref.id,
       title = _ref.title,
+      priority = _ref.priority,
       handleDelete = _ref.handleDelete,
       handleModify = _ref.handleModify,
       handleConsultTache = _ref.handleConsultTache,
@@ -28413,7 +28414,7 @@ function Task(_ref) {
 
   function handleValideChangement(e) {
     if (e.key === 'Enter') {
-      handleModify(id, e.target.value);
+      handleModify(id, priority, e.target.value);
       setInModify(false);
     } else if (e.keyCode === 27) {
       setInModify(false);
@@ -28431,7 +28432,7 @@ function Task(_ref) {
   } // Si on double click sur un tache, on appelle le callback passé en paramètre qui envoyé l'information à TaskStore
 
 
-  function handleDoubleClick() {
+  function handleOpenInfosOfTask() {
     handleConsultTache({
       consult: true,
       id: id
@@ -28439,8 +28440,7 @@ function Task(_ref) {
   }
 
   return /*#__PURE__*/_react.default.createElement("ul", {
-    className: "list-group",
-    onDoubleClick: handleDoubleClick
+    className: "list-group"
   }, /*#__PURE__*/_react.default.createElement("li", {
     className: "list-group-item d-flex justify-content-between align-items-center",
     style: consulting ? {
@@ -28457,10 +28457,17 @@ function Task(_ref) {
     value: changement
   }) : /*#__PURE__*/_react.default.createElement("span", {
     onDoubleClick: handleClickToChangement
-  }, title), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("span", {
+  }, title), /*#__PURE__*/_react.default.createElement("div", {
+    className: "d-flex flex-row"
+  }, /*#__PURE__*/_react.default.createElement("span", {
+    className: "badge badge-light badge-pill mr-1 pt-1"
+  }, priority), /*#__PURE__*/_react.default.createElement("button", {
     onClick: handleCLick,
     className: "badge badge-danger badge-pill mr-1"
-  }, "X"))));
+  }, "X"), /*#__PURE__*/_react.default.createElement("button", {
+    onClick: handleOpenInfosOfTask,
+    className: "badge badge-primary badge-pill mr-1"
+  }, "\u2192"))));
 } // J'exporte mon composant
 
 
@@ -28511,22 +28518,94 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 function InfosOfTask(_ref) {
   var tache = _ref.tache,
-      handleClose = _ref.handleClose;
+      handleClose = _ref.handleClose,
+      handleModify = _ref.handleModify;
 
-  // fonction qui va appeler le callback pour fermer faire disparaitre la InfosOfTask
-  function close() {
+  // On défini deux états pour suivre les valeurs entré dans les inputs
+  var _useState = (0, _react.useState)(tache.title),
+      _useState2 = _slicedToArray(_useState, 2),
+      newTitle = _useState2[0],
+      setNewtitle = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(tache.priority),
+      _useState4 = _slicedToArray(_useState3, 2),
+      newPriority = _useState4[0],
+      setNewPriority = _useState4[1];
+
+  function handleNewtitle(e) {
+    setNewtitle(e.target.value);
+  }
+
+  function handleNewPriority(e) {
+    setNewPriority(e.target.value);
+  }
+
+  function handleSubmit(e) {
+    handleModify(tache.id, newPriority, newTitle);
+  } // fonction qui va appeler le callback pour fermer faire disparaitre la InfosOfTask
+
+
+  function handleClickToClose(e) {
     handleClose({
       consult: false,
       id: null
     });
   }
 
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("ul", null, /*#__PURE__*/_react.default.createElement("li", null, tache.id), /*#__PURE__*/_react.default.createElement("li", null, tache.priority), /*#__PURE__*/_react.default.createElement("li", null, tache.title)), /*#__PURE__*/_react.default.createElement("button", {
-    className: "btn btn-danger",
-    onClick: close
-  }, "Close"));
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "card"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "card-body"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "d-flex justify-content-between align-items-center"
+  }, /*#__PURE__*/_react.default.createElement("h5", {
+    className: "card-title mr-2"
+  }, tache.title), /*#__PURE__*/_react.default.createElement("button", {
+    onClick: handleClickToClose,
+    className: "badge badge-danger badge-pill mr-1"
+  }, "X")), /*#__PURE__*/_react.default.createElement("hr", null), /*#__PURE__*/_react.default.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: "title"
+  }, "Titre de la t\xE2che"), /*#__PURE__*/_react.default.createElement("input", {
+    className: "form-control mb-2",
+    type: "text",
+    id: "title",
+    name: "title",
+    value: newTitle,
+    onChange: handleNewtitle
+  }), /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: "priority"
+  }, "Priorit\xE9"), /*#__PURE__*/_react.default.createElement("input", {
+    className: "form-control",
+    type: "number",
+    min: "0",
+    max: "10",
+    name: "priority",
+    id: "priority",
+    placeholder: "Une valeur entre 0 et 10",
+    value: newPriority,
+    onChange: handleNewPriority
+  }), /*#__PURE__*/_react.default.createElement("div", {
+    className: "text-center mt-4"
+  }, /*#__PURE__*/_react.default.createElement("button", {
+    className: "btn btn-success",
+    onClick: handleSubmit
+  }, "Valider les modifications")))));
 }
 
 var _default = InfosOfTask;
@@ -28594,7 +28673,7 @@ function useStateTask() {
 
   function sortTasks(taches) {
     return taches.sort(function (a, b) {
-      return a.priority - b.priority;
+      return b.priority - a.priority;
     });
   }
 
@@ -28612,19 +28691,19 @@ function TaskStore() {
     title: "Tache 1"
   }, {
     id: 2,
-    priority: 0,
+    priority: 5,
     title: "Tache 2"
   }, {
     id: 3,
-    priority: 0,
+    priority: 10,
     title: "Tache 3"
   }, {
     id: 4,
-    priority: 0,
+    priority: 6,
     title: "Séparer le composant input de modification"
   }, {
     id: 5,
-    priority: 0,
+    priority: 15,
     title: "Gérer la suppression d'un élément (position)"
   }
   /*{id: 4, position: 4, title:"Faire les devoirs"},
@@ -28667,11 +28746,11 @@ function TaskStore() {
     setTaches([]);
   }
 
-  function modifyTache(id, new_title) {
+  function modifyTache(id, new_priority, new_title) {
     var new_taches = taches.map(function (t) {
       return t.id === id ? {
         id: id,
-        position: t.position,
+        priority: new_priority,
         title: new_title
       } : t;
     });
@@ -28689,8 +28768,7 @@ function TaskStore() {
       key: t.id,
       id: t.id,
       title: t.title,
-      nbTache: taches.length,
-      position: t.position,
+      priority: t.priority,
       handleDelete: removeTache,
       handleModify: modifyTache,
       handleConsultTache: setConsultTache,
@@ -28704,7 +28782,8 @@ function TaskStore() {
     tache: taches.find(function (t) {
       return t.id === consultTache.id;
     }),
-    handleClose: setConsultTache
+    handleClose: setConsultTache,
+    handleModify: modifyTache
   }) : null));
 }
 
@@ -28754,7 +28833,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39679" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "34135" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

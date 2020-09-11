@@ -1,7 +1,7 @@
 import {render} from 'react-dom'
 import React, {useState, useCallback} from 'react'
 
-function Task ({id, title, handleDelete, handleModify, handleConsultTache, consulting}) {
+function Task ({id, title, priority, handleDelete, handleModify, handleConsultTache, consulting}) {
 
     // Définition des hooks utilisés
     const [inModify, setInModify] = useState(false)
@@ -15,7 +15,7 @@ function Task ({id, title, handleDelete, handleModify, handleConsultTache, consu
     // Si on valide la modification (en appuyant sur entrée), alors la modification est validée
     function handleValideChangement (e) {
         if (e.key === 'Enter') {
-            handleModify(id, e.target.value)
+            handleModify(id, priority, e.target.value)
             setInModify(false)
         } else if (e.keyCode === 27) {
             setInModify(false)
@@ -33,18 +33,20 @@ function Task ({id, title, handleDelete, handleModify, handleConsultTache, consu
     }
 
     // Si on double click sur un tache, on appelle le callback passé en paramètre qui envoyé l'information à TaskStore
-    function handleDoubleClick () {
+    function handleOpenInfosOfTask () {
         handleConsultTache({consult: true, id: id})
     }
 
-    return <ul className="list-group" onDoubleClick={handleDoubleClick}>
+    return <ul className="list-group">
         <li className="list-group-item d-flex justify-content-between align-items-center" style={ consulting ? {borderColor:'blue'} : null}>
             {inModify ?
                 <input style={{width: "300px"}} className="form-control" type="text" onChange={handleChangement} onKeyDown={handleValideChangement} value={changement}></input> :
                 <span onDoubleClick={handleClickToChangement}>{title}</span>
             }
-            <div>
-                <span onClick={handleCLick} className="badge badge-danger badge-pill mr-1">X</span>
+            <div className="d-flex flex-row">
+                <span className="badge badge-light badge-pill mr-1 pt-1">{priority}</span>
+                <button onClick={handleCLick} className="badge badge-danger badge-pill mr-1">X</button>
+                <button onClick={handleOpenInfosOfTask} className="badge badge-primary badge-pill mr-1">→</button>
             </div>
         </li>
     </ul>

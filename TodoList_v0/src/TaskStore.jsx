@@ -17,7 +17,7 @@ function useStateTask(initial = {}) {
     // La fonction de trie des taches (tri sur la position)
     function sortTasks(taches) {
         return taches.sort(function(a,b) {
-            return a.priority - b.priority
+            return b.priority - a.priority
         })
     }
 
@@ -31,10 +31,10 @@ function TaskStore () {
 
     const [taches, setTaches] = useStateTask([
         {id: 1, priority: 0, title:"Tache 1"},
-        {id: 2, priority: 0, title:"Tache 2"},
-        {id: 3, priority: 0, title:"Tache 3"},
-        {id: 4, priority: 0, title:"Séparer le composant input de modification"},
-        {id: 5, priority: 0, title:"Gérer la suppression d'un élément (position)"}
+        {id: 2, priority: 5, title:"Tache 2"},
+        {id: 3, priority: 10, title:"Tache 3"},
+        {id: 4, priority: 6, title:"Séparer le composant input de modification"},
+        {id: 5, priority: 15, title:"Gérer la suppression d'un élément (position)"}
         /*{id: 4, position: 4, title:"Faire les devoirs"},
         {id: 5, position: 5, title:"Promener le chien"},
         {id: 6, position: 6, title:"Faire le ménage"}*/
@@ -61,8 +61,8 @@ function TaskStore () {
         setTaches([])
     }
 
-    function modifyTache(id, new_title) {
-        const new_taches = taches.map(t => t.id === id ? {id: id, position: t.position, title: new_title} : t)
+    function modifyTache(id, new_priority, new_title) {
+        const new_taches = taches.map(t => t.id === id ? {id: id, priority: new_priority, title: new_title} : t)
         setTaches(new_taches)
     }
 
@@ -73,8 +73,7 @@ function TaskStore () {
                 <Task key={t.id}
                       id={t.id}
                       title={t.title}
-                      nbTache={taches.length}
-                      position={t.position}
+                      priority={t.priority}
                       handleDelete={removeTache}
                       handleModify={modifyTache}
                       handleConsultTache={setConsultTache}
@@ -83,7 +82,7 @@ function TaskStore () {
             {taches.length > 0 ? <ButtonSuppAll handleDeleteAll={removeAll}/> : null}
         </div>
         <div className="offset-md-1 col-md-3">
-            {consultTache.consult ? <InfosOfTask tache={taches.find(t => t.id === consultTache.id)} handleClose={setConsultTache}/> : null}
+            {consultTache.consult ? <InfosOfTask tache={taches.find(t => t.id === consultTache.id)} handleClose={setConsultTache} handleModify={modifyTache}/> : null}
         </div>
     </div>
 }
