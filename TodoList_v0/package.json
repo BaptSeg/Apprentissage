@@ -5,7 +5,9 @@
   "license": "MIT",
   "dependencies": {
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-long-press": "^0.1.6",
+    "use-long-press": "^1.0.4"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.4"

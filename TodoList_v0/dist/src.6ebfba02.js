@@ -28285,12 +28285,271 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"src/index.jsx":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"src/TaskInput.jsx":[function(require,module,exports) {
 "use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function TaskInput(_ref) {
+  var handleAdd = _ref.handleAdd;
+
+  var _useState = (0, _react.useState)(''),
+      _useState2 = _slicedToArray(_useState, 2),
+      name = _useState2[0],
+      setName = _useState2[1];
+
+  function handleChange(e) {
+    setName(e.target.value);
+  }
+
+  function handleEnter(e) {
+    if (e.key === 'Enter') {
+      handleAdd(name);
+      setName('');
+    }
+  }
+
+  function handleClick(e) {
+    if (name !== '') {
+      handleAdd(name);
+      setName('');
+    }
+  }
+
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "form-group offset-md-4 col-md-4 mt-5 text-center"
+  }, /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: "name"
+  }, "Entrer le nom de votre t\xE2che"), /*#__PURE__*/_react.default.createElement("input", {
+    className: "form-control",
+    type: "text",
+    id: "name",
+    name: "name",
+    value: name,
+    onChange: handleChange,
+    onKeyDown: handleEnter
+  }), /*#__PURE__*/_react.default.createElement("button", {
+    className: "btn btn-primary mt-3 mb-3",
+    onClick: handleClick,
+    onKeyDown: handleClick
+  }, "Ajouter ma t\xE2che"));
+}
+
+var _default = TaskInput;
+exports.default = _default;
+},{"react":"node_modules/react/index.js"}],"src/Task.jsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
 
 var _reactDom = require("react-dom");
 
 var _react = _interopRequireWildcard(require("react"));
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function Task(_ref) {
+  var id = _ref.id,
+      title = _ref.title,
+      handleDelete = _ref.handleDelete,
+      handleModify = _ref.handleModify,
+      handleConsultTache = _ref.handleConsultTache,
+      consulting = _ref.consulting;
+
+  // Définition des hooks utilisés
+  var _useState = (0, _react.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      inModify = _useState2[0],
+      setInModify = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(title),
+      _useState4 = _slicedToArray(_useState3, 2),
+      changement = _useState4[0],
+      setChangement = _useState4[1]; // Si on double click sur une tâche, on set son inModify a true (cette tâche est en modification)
+
+
+  function handleClickToChangement() {
+    setInModify(true);
+  } // Si on valide la modification (en appuyant sur entrée), alors la modification est validée
+
+
+  function handleValideChangement(e) {
+    if (e.key === 'Enter') {
+      handleModify(id, e.target.value);
+      setInModify(false);
+    } else if (e.keyCode === 27) {
+      setInModify(false);
+    }
+  } // Handler qui permet de suivre le changement de nom et de le mettre à jour
+
+
+  function handleChangement(e) {
+    setChangement(e.target.value);
+  } // Si on click sur la croix alors on appele le callback passé en paramètre, qui envoie sur la function removeTache()
+
+
+  function handleCLick() {
+    handleDelete(id);
+  } // Si on double click sur un tache, on appelle le callback passé en paramètre qui envoyé l'information à TaskStore
+
+
+  function handleDoubleClick() {
+    handleConsultTache({
+      consult: true,
+      id: id
+    });
+  }
+
+  return /*#__PURE__*/_react.default.createElement("ul", {
+    className: "list-group",
+    onDoubleClick: handleDoubleClick
+  }, /*#__PURE__*/_react.default.createElement("li", {
+    className: "list-group-item d-flex justify-content-between align-items-center",
+    style: consulting ? {
+      borderColor: 'blue'
+    } : null
+  }, inModify ? /*#__PURE__*/_react.default.createElement("input", {
+    style: {
+      width: "300px"
+    },
+    className: "form-control",
+    type: "text",
+    onChange: handleChangement,
+    onKeyDown: handleValideChangement,
+    value: changement
+  }) : /*#__PURE__*/_react.default.createElement("span", {
+    onDoubleClick: handleClickToChangement
+  }, title), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("span", {
+    onClick: handleCLick,
+    className: "badge badge-danger badge-pill mr-1"
+  }, "X"))));
+} // J'exporte mon composant
+
+
+var _default = Task;
+exports.default = _default;
+},{"react-dom":"node_modules/react-dom/index.js","react":"node_modules/react/index.js"}],"src/ButtonSuppAll.jsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function ButtonSuppAll(_ref) {
+  var handleDeleteAll = _ref.handleDeleteAll;
+
+  function handleClick() {
+    handleDeleteAll();
+  }
+
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "text-center mt-3"
+  }, /*#__PURE__*/_react.default.createElement("button", {
+    className: "btn btn-danger",
+    onClick: handleClick
+  }, "Supprimer toutes les taches"));
+}
+
+var _default = ButtonSuppAll;
+exports.default = _default;
+},{"react":"node_modules/react/index.js"}],"src/InfosOfTask.jsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function InfosOfTask(_ref) {
+  var tache = _ref.tache,
+      handleClose = _ref.handleClose;
+
+  // fonction qui va appeler le callback pour fermer faire disparaitre la InfosOfTask
+  function close() {
+    handleClose({
+      consult: false,
+      id: null
+    });
+  }
+
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("ul", null, /*#__PURE__*/_react.default.createElement("li", null, tache.id), /*#__PURE__*/_react.default.createElement("li", null, tache.priority), /*#__PURE__*/_react.default.createElement("li", null, tache.title)), /*#__PURE__*/_react.default.createElement("button", {
+    className: "btn btn-danger",
+    onClick: close
+  }, "Close"));
+}
+
+var _default = InfosOfTask;
+exports.default = _default;
+},{"react":"node_modules/react/index.js"}],"src/TaskStore.jsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _TaskInput = _interopRequireDefault(require("./TaskInput"));
+
+var _Task = _interopRequireDefault(require("./Task"));
+
+var _ButtonSuppAll = _interopRequireDefault(require("./ButtonSuppAll"));
+
+var _InfosOfTask = _interopRequireDefault(require("./InfosOfTask"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
@@ -28335,188 +28594,64 @@ function useStateTask() {
 
   function sortTasks(taches) {
     return taches.sort(function (a, b) {
-      return a.position - b.position;
+      return a.priority - b.priority;
     });
   }
 
   return [taches, TaskChangement];
 }
 /**
- * FOnction composants
+ * Composant
  */
 
-
-function Task(_ref) {
-  var id = _ref.id,
-      title = _ref.title,
-      nbTache = _ref.nbTache,
-      handleDelete = _ref.handleDelete,
-      handleModify = _ref.handleModify,
-      handleChangePosition = _ref.handleChangePosition;
-  console.log(nbTache);
-
-  var _useState3 = (0, _react.useState)(false),
-      _useState4 = _slicedToArray(_useState3, 2),
-      inModify = _useState4[0],
-      setInModify = _useState4[1];
-
-  var _useState5 = (0, _react.useState)(title),
-      _useState6 = _slicedToArray(_useState5, 2),
-      changement = _useState6[0],
-      setChangement = _useState6[1]; // Si on double click sur une tâche, on set son inModify a true (cette tâche est en modification)
-
-
-  function handleClickToChangement() {
-    setInModify(true);
-  } // Si on valide la modification (en appuyant du entrée), alors la modification est validée
-
-
-  function handleValideChangement(e) {
-    if (e.key === 'Enter') {
-      handleModify(id, e.target.value);
-      setInModify(false);
-    } else if (e.keyCode === 27) {
-      setInModify(false);
-    }
-  } // Handler qui permet de suivre le changement de nom et de le mettre à jour
-
-
-  function handleChangement(e) {
-    setChangement(e.target.value);
-  } // Si on click sur la croix alors on appele le callback passé en paramètre, qui envoie sur la function removeTache()
-
-
-  function handleCLick() {
-    handleDelete(id);
-  }
-
-  function handleUp() {
-    handleChangePosition(true, id);
-  }
-
-  function handleDown() {
-    handleChangePosition(false, id);
-  }
-
-  return /*#__PURE__*/_react.default.createElement("ul", {
-    className: "list-group offset-md-3 col-md-6",
-    on: true
-  }, /*#__PURE__*/_react.default.createElement("li", {
-    className: "list-group-item d-flex justify-content-between align-items-center"
-  }, inModify ? /*#__PURE__*/_react.default.createElement("input", {
-    className: "form-control",
-    type: "text",
-    onChange: handleChangement,
-    onKeyDown: handleValideChangement,
-    value: changement
-  }) : /*#__PURE__*/_react.default.createElement("span", {
-    onDoubleClick: handleClickToChangement
-  }, title), /*#__PURE__*/_react.default.createElement("div", null, id !== 1 ? /*#__PURE__*/_react.default.createElement("span", {
-    onClick: handleUp,
-    className: "badge badge-info badge-pill mr-1"
-  }, "\u2191") : null, id !== nbTaches ? /*#__PURE__*/_react.default.createElement("span", {
-    onClick: handleDown,
-    className: "badge badge-primary badge-pill mr-1"
-  }, "\u2193") : null, /*#__PURE__*/_react.default.createElement("span", {
-    onClick: handleCLick,
-    className: "badge badge-danger badge-pill"
-  }, "X"))));
-}
-
-function TaskInput(_ref2) {
-  var handleAdd = _ref2.handleAdd;
-
-  var _useState7 = (0, _react.useState)(''),
-      _useState8 = _slicedToArray(_useState7, 2),
-      name = _useState8[0],
-      setName = _useState8[1];
-
-  function handleChange(e) {
-    setName(e.target.value);
-  }
-
-  function handleEnter(e) {
-    if (e.key === 'Enter') {
-      handleAdd(name);
-      setName('');
-    }
-  }
-
-  function handleClick(e) {
-    if (name !== '') {
-      handleAdd(name);
-      setName('');
-    }
-  }
-
-  return /*#__PURE__*/_react.default.createElement("div", {
-    className: "form-group offset-md-5 col-md-2 mt-5 text-center"
-  }, /*#__PURE__*/_react.default.createElement("label", {
-    htmlFor: "name"
-  }, "Entrer le nom de votre t\xE2che"), /*#__PURE__*/_react.default.createElement("input", {
-    className: "form-control",
-    type: "text",
-    id: "name",
-    name: "name",
-    value: name,
-    onChange: handleChange,
-    onKeyDown: handleEnter
-  }), /*#__PURE__*/_react.default.createElement("button", {
-    className: "btn btn-primary mt-3 mb-3",
-    onClick: handleClick,
-    onKeyDown: handleClick
-  }, "Ajouter ma t\xE2che"));
-}
-
-function ButtonSuppAll(_ref3) {
-  var handleDeleteAll = _ref3.handleDeleteAll;
-
-  function handleClick() {
-    handleDeleteAll();
-  }
-
-  return /*#__PURE__*/_react.default.createElement("div", {
-    className: "text-center mt-3"
-  }, /*#__PURE__*/_react.default.createElement("button", {
-    className: "btn btn-danger",
-    onClick: handleClick
-  }, "Supprimer toutes les taches"));
-}
 
 function TaskStore() {
   var _useStateTask = useStateTask([{
     id: 1,
-    position: 1,
-    title: "Faire mes courses"
+    priority: 0,
+    title: "Tache 1"
   }, {
     id: 2,
-    position: 2,
-    title: "Faire une lessive"
+    priority: 0,
+    title: "Tache 2"
   }, {
     id: 3,
-    position: 3,
-    title: "Préparer le repas"
+    priority: 0,
+    title: "Tache 3"
   }, {
     id: 4,
-    position: 4,
-    title: "Faire les devoirs"
+    priority: 0,
+    title: "Séparer le composant input de modification"
   }, {
     id: 5,
-    position: 5,
-    title: "Promener le chien"
-  }, {
-    id: 6,
-    position: 6,
-    title: "Faire le ménage"
-  }]),
+    priority: 0,
+    title: "Gérer la suppression d'un élément (position)"
+  }
+  /*{id: 4, position: 4, title:"Faire les devoirs"},
+  {id: 5, position: 5, title:"Promener le chien"},
+  {id: 6, position: 6, title:"Faire le ménage"}*/
+  ]),
       _useStateTask2 = _slicedToArray(_useStateTask, 2),
       taches = _useStateTask2[0],
-      setTaches = _useStateTask2[1];
+      setTaches = _useStateTask2[1]; // Etat qui va permettre de stocker si les informations d'une tâche est entrain d'être consultée et de quelle tâche il s'agit
+
+
+  var _useState3 = (0, _react.useState)({
+    consult: false,
+    id: null
+  }),
+      _useState4 = _slicedToArray(_useState3, 2),
+      consultTache = _useState4[0],
+      setConsultTache = _useState4[1];
+
+  console.log(consultTache);
 
   function addTaches(title) {
     var tache = {
-      id: taches.length + 1,
-      position: taches.length + 1,
+      id: Math.max.apply(Math, taches.map(function (t) {
+        return t.id;
+      })) + 1,
+      priority: 0,
       title: title
     };
     setTaches([].concat(_toConsumableArray(taches), [tache]));
@@ -28535,65 +28670,63 @@ function TaskStore() {
   function modifyTache(id, new_title) {
     var new_taches = taches.map(function (t) {
       return t.id === id ? {
-        title: new_title,
-        id: id
+        id: id,
+        position: t.position,
+        title: new_title
       } : t;
     });
     setTaches(new_taches);
   }
 
-  function modifyPosition(up, id) {
-    console.log(up);
-
-    if (up && id !== 1) {
-      var new_taches = taches.map(function (t) {
-        var tid = t.id;
-        var ttitle = t.title;
-        var tposition = t.position;
-
-        if (t.id === id) {
-          return {
-            id: tid,
-            position: tposition - 1,
-            title: ttitle
-          };
-        } else if (t.id === id - 1) {
-          return {
-            id: tid,
-            position: tposition + 1,
-            title: ttitle
-          };
-        } else {
-          return {
-            id: tid,
-            position: tposition,
-            title: ttitle
-          };
-        }
-      });
-      setTaches(new_taches);
-    }
-  }
-
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(TaskInput, {
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "row"
+  }, /*#__PURE__*/_react.default.createElement(_TaskInput.default, {
     handleAdd: addTaches
-  }), taches.map(function (t) {
-    return /*#__PURE__*/_react.default.createElement(Task, {
+  }), /*#__PURE__*/_react.default.createElement("div", {
+    className: "offset-md-2 col-md-4"
+  }, taches.map(function (t) {
+    return /*#__PURE__*/_react.default.createElement(_Task.default, {
       key: t.id,
       id: t.id,
       title: t.title,
       nbTache: taches.length,
+      position: t.position,
       handleDelete: removeTache,
       handleModify: modifyTache,
-      handleChangePosition: modifyPosition
+      handleConsultTache: setConsultTache,
+      consulting: t.id === consultTache.id ? true : false
     });
-  }), taches.length > 0 ? /*#__PURE__*/_react.default.createElement(ButtonSuppAll, {
+  }), taches.length > 0 ? /*#__PURE__*/_react.default.createElement(_ButtonSuppAll.default, {
     handleDeleteAll: removeAll
-  }) : null, console.log(taches));
+  }) : null), /*#__PURE__*/_react.default.createElement("div", {
+    className: "offset-md-1 col-md-3"
+  }, consultTache.consult ? /*#__PURE__*/_react.default.createElement(_InfosOfTask.default, {
+    tache: taches.find(function (t) {
+      return t.id === consultTache.id;
+    }),
+    handleClose: setConsultTache
+  }) : null));
 }
 
-(0, _reactDom.render)( /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(TaskStore, null)), document.getElementById('app'));
-},{"react-dom":"node_modules/react-dom/index.js","react":"node_modules/react/index.js"}],"../../../.npm/_npx/23344/lib/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+var _default = TaskStore;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","./TaskInput":"src/TaskInput.jsx","./Task":"src/Task.jsx","./ButtonSuppAll":"src/ButtonSuppAll.jsx","./InfosOfTask":"src/InfosOfTask.jsx"}],"src/index.jsx":[function(require,module,exports) {
+"use strict";
+
+var _reactDom = require("react-dom");
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _TaskStore = _interopRequireDefault(require("./TaskStore"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+(0, _reactDom.render)( /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_TaskStore.default, null)), document.getElementById('app'));
+},{"react-dom":"node_modules/react-dom/index.js","react":"node_modules/react/index.js","./TaskStore":"src/TaskStore.jsx"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -28621,7 +28754,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45629" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39679" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -28797,5 +28930,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../.npm/_npx/23344/lib/node_modules/parcel/src/builtins/hmr-runtime.js","src/index.jsx"], null)
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","src/index.jsx"], null)
 //# sourceMappingURL=/src.6ebfba02.js.map
