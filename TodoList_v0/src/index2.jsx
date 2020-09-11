@@ -22,11 +22,12 @@ function useStateTask(initial = {}) {
 }
 
 
- /**
-  * FOnction composants
-  */
-function Task ({id, title, handleDelete, handleModify, handleChangePosition}) {
+/**
+ * FOnction composants
+ */
+function Task ({id, title, nbTache, handleDelete, handleModify, handleChangePosition}) {
 
+    console.log(nbTache)
     const [inModify, setInModify] = useState(false)
     const [changement, setChangement] = useState(title)
 
@@ -39,7 +40,7 @@ function Task ({id, title, handleDelete, handleModify, handleChangePosition}) {
     function handleValideChangement (e) {
         if (e.key === 'Enter') {
             handleModify(id, e.target.value)
-            setInModify(false)            
+            setInModify(false)
         } else if (e.keyCode === 27) {
             setInModify(false)
         }
@@ -65,13 +66,13 @@ function Task ({id, title, handleDelete, handleModify, handleChangePosition}) {
 
     return <ul className="list-group offset-md-3 col-md-6" on>
         <li className="list-group-item d-flex justify-content-between align-items-center">
-            {inModify ? 
-                <input className="form-control" type="text" onChange={handleChangement} onKeyDown={handleValideChangement} value={changement}></input> : 
+            {inModify ?
+                <input className="form-control" type="text" onChange={handleChangement} onKeyDown={handleValideChangement} value={changement}></input> :
                 <span onDoubleClick={handleClickToChangement}>{title}</span>
             }
             <div>
-                <span onClick={handleUp} className="badge badge-info badge-pill mr-1">↑</span>
-                <span onClick={handleDown} className="badge badge-primary badge-pill mr-1">↓</span>
+                {id !== 1 ? <span onClick={handleUp} className="badge badge-info badge-pill mr-1">↑</span> : null}
+                {id !== nbTache ? <span onClick={handleDown} className="badge badge-primary badge-pill mr-1">↓</span> : null}
                 <span onClick={handleCLick} className="badge badge-danger badge-pill">X</span>
             </div>
         </li>
@@ -100,7 +101,7 @@ function TaskInput ({handleAdd}) {
         }
     }
 
-    return <div className="form-group offset-md-4 col-md-4 mt-5 text-center">
+    return <div className="form-group offset-md-5 col-md-2 mt-5 text-center">
         <label htmlFor="name">Entrer le nom de votre tâche</label>
         <input className="form-control" type="text" id="name" name="name" value={name} onChange={handleChange} onKeyDown={handleEnter}></input>
         <button className="btn btn-primary mt-3 mb-3" onClick={handleClick} onKeyDown={handleClick}>Ajouter ma tâche</button>
@@ -122,17 +123,17 @@ function TaskStore () {
 
     const [taches, setTaches] = useStateTask([
         {id: 1, position: 1, title:"Faire mes courses"},
-        {id: 2, position: 2, title:"Faire une lessive"}, 
+        {id: 2, position: 2, title:"Faire une lessive"},
         {id: 3, position: 3, title:"Préparer le repas"},
         {id: 4, position: 4, title:"Faire les devoirs"},
-        {id: 5, position: 5, title:"Promener le chien"}, 
+        {id: 5, position: 5, title:"Promener le chien"},
         {id: 6, position: 6, title:"Faire le ménage"}
     ])
 
     function addTaches(title) {
         const tache = {
             id: taches.length + 1,
-            position: taches.length + 1, 
+            position: taches.length + 1,
             title: title
         }
         setTaches([...taches, tache])
@@ -166,14 +167,13 @@ function TaskStore () {
                     return {id: tid, position: tposition, title: ttitle}
                 }
             })
-            console.log(new_taches)
             setTaches(new_taches)
         }
     }
 
     return <div>
         <TaskInput handleAdd={addTaches}></TaskInput>
-        {taches.map(t => <Task key={t.id} id={t.id} title={t.title} handleDelete={removeTache} handleModify={modifyTache} handleChangePosition={modifyPosition}></Task>)}
+        {taches.map(t => <Task key={t.id} id={t.id} title={t.title} nbTache={taches.length} handleDelete={removeTache} handleModify={modifyTache} handleChangePosition={modifyPosition}></Task>)}
         {taches.length > 0 ? <ButtonSuppAll handleDeleteAll={removeAll}/> : null}
         {console.log(taches)}
     </div>

@@ -28349,9 +28349,11 @@ function useStateTask() {
 function Task(_ref) {
   var id = _ref.id,
       title = _ref.title,
+      nbTache = _ref.nbTache,
       handleDelete = _ref.handleDelete,
       handleModify = _ref.handleModify,
       handleChangePosition = _ref.handleChangePosition;
+  console.log(nbTache);
 
   var _useState3 = (0, _react.useState)(false),
       _useState4 = _slicedToArray(_useState3, 2),
@@ -28409,13 +28411,13 @@ function Task(_ref) {
     value: changement
   }) : /*#__PURE__*/_react.default.createElement("span", {
     onDoubleClick: handleClickToChangement
-  }, title), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("span", {
+  }, title), /*#__PURE__*/_react.default.createElement("div", null, id !== 1 ? /*#__PURE__*/_react.default.createElement("span", {
     onClick: handleUp,
     className: "badge badge-info badge-pill mr-1"
-  }, "\u2191"), /*#__PURE__*/_react.default.createElement("span", {
+  }, "\u2191") : null, id !== nbTaches ? /*#__PURE__*/_react.default.createElement("span", {
     onClick: handleDown,
     className: "badge badge-primary badge-pill mr-1"
-  }, "\u2193"), /*#__PURE__*/_react.default.createElement("span", {
+  }, "\u2193") : null, /*#__PURE__*/_react.default.createElement("span", {
     onClick: handleCLick,
     className: "badge badge-danger badge-pill"
   }, "X"))));
@@ -28448,7 +28450,7 @@ function TaskInput(_ref2) {
   }
 
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: "form-group offset-md-4 col-md-4 mt-5 text-center"
+    className: "form-group offset-md-5 col-md-2 mt-5 text-center"
   }, /*#__PURE__*/_react.default.createElement("label", {
     htmlFor: "name"
   }, "Entrer le nom de votre t\xE2che"), /*#__PURE__*/_react.default.createElement("input", {
@@ -28569,7 +28571,6 @@ function TaskStore() {
           };
         }
       });
-      console.log(new_taches);
       setTaches(new_taches);
     }
   }
@@ -28581,6 +28582,7 @@ function TaskStore() {
       key: t.id,
       id: t.id,
       title: t.title,
+      nbTache: taches.length,
       handleDelete: removeTache,
       handleModify: modifyTache,
       handleChangePosition: modifyPosition
@@ -28591,7 +28593,7 @@ function TaskStore() {
 }
 
 (0, _reactDom.render)( /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(TaskStore, null)), document.getElementById('app'));
-},{"react-dom":"node_modules/react-dom/index.js","react":"node_modules/react/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react-dom":"node_modules/react-dom/index.js","react":"node_modules/react/index.js"}],"../../../.npm/_npx/23344/lib/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -28619,7 +28621,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60078" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45629" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -28795,5 +28797,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","src/index.jsx"], null)
+},{}]},{},["../../../.npm/_npx/23344/lib/node_modules/parcel/src/builtins/hmr-runtime.js","src/index.jsx"], null)
 //# sourceMappingURL=/src.6ebfba02.js.map
