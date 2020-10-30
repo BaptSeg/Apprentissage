@@ -42,7 +42,6 @@ function TaskStore () {
 
     // Etat qui va permettre de stocker si les informations d'une tâche est entrain d'être consultée et de quelle tâche il s'agit
     const [consultTache, setConsultTache] = useState({consult: false, id: null})
-    console.log(consultTache)
 
     function addTaches(title) {
         const tache = {

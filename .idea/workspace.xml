@@ -11,12 +11,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4884e158-a1b0-4c46-97d6-ea7e7a8cdd90" name="Default Changelist" comment="Premier commit">
+      <change afterPath="$PROJECT_DIR$/React_Express_App_Medium_Tutorial/api/models/TachesList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/React_Express_App_Medium_Tutorial/api/routes/other.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/React_Express_App_Medium_Tutorial/api/routes/task.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/React_Express_App_Medium_Tutorial/client/src/Components/ButtonSave.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/React_Express_App_Medium_Tutorial/client/src/Components/ButtonSuppAll.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/React_Express_App_Medium_Tutorial/client/src/Components/HomePage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/React_Express_App_Medium_Tutorial/client/src/Components/InfosOfTask.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/React_Express_App_Medium_Tutorial/client/src/Components/Other.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/React_Express_App_Medium_Tutorial/client/src/Components/Task.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/React_Express_App_Medium_Tutorial/client/src/Components/TaskInput.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/React_Express_App_Medium_Tutorial/client/src/Components/TaskStore.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/React_Express_App_Medium_Tutorial/client/src/Components/TestComponent.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/React_Express_App_Medium_Tutorial/client/src/Components/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go-fullstack/backend/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go-fullstack/backend/controllers/stuff.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go-fullstack/backend/controllers/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go-fullstack/backend/middleware/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go-fullstack/backend/middleware/multer-config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go-fullstack/backend/models/User.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go-fullstack/backend/models/thing.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go-fullstack/backend/routes/stuff.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go-fullstack/backend/routes/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go-fullstack/backend/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/React_Express_App_Medium_Tutorial/api/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/React_Express_App_Medium_Tutorial/api/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/React_Express_App_Medium_Tutorial/api/routes/testAPI.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/React_Express_App_Medium_Tutorial/api/routes/users.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/React_Express_App_Medium_Tutorial/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/React_Express_App_Medium_Tutorial/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/React_Express_App_Medium_Tutorial/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/React_Express_App_Medium_Tutorial/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/React_Express_App_Medium_Tutorial/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/React_Express_App_Medium_Tutorial/client/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/React_Express_App_Medium_Tutorial/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/React_Express_App_Medium_Tutorial/client/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TodoList_v0/.cache/24/01df17935c9cf0e35f2ca838e7da51.json" beforeDir="false" afterPath="$PROJECT_DIR$/TodoList_v0/.cache/24/01df17935c9cf0e35f2ca838e7da51.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TodoList_v0/.cache/75/b2d9bed32804bc9f3ba37ece7a3180.json" beforeDir="false" afterPath="$PROJECT_DIR$/TodoList_v0/.cache/75/b2d9bed32804bc9f3ba37ece7a3180.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoList_v0/.cache/ff/da4465d840991643bdea3a30c40e03.json" beforeDir="false" afterPath="$PROJECT_DIR$/TodoList_v0/.cache/ff/da4465d840991643bdea3a30c40e03.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TodoList_v0/dist/src.6ebfba02.js" beforeDir="false" afterPath="$PROJECT_DIR$/TodoList_v0/dist/src.6ebfba02.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TodoList_v0/dist/src.6ebfba02.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/TodoList_v0/dist/src.6ebfba02.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TodoList_v0/src/InfosOfTask.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/TodoList_v0/src/InfosOfTask.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoList_v0/src/TaskStore.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/TodoList_v0/src/TaskStore.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go-fullstack/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/go-fullstack/frontend/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +58,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/React_Express_App_Medium_Tutorial" />
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="ProjectId" id="1hJNMlLmkeyharPNe5sIgHEhoFb" />
@@ -36,9 +70,19 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/React_Express_App_Medium_Tutorial/client/src/Components" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/go-fullstack/frontend/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/React_Express_App_Medium_Tutorial/client/src/Components" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/React_Express_App_Medium_Tutorial/client/src/Components" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -50,7 +94,13 @@
       <updated>1599725188069</updated>
       <workItem from="1599725189115" duration="673000" />
       <workItem from="1599808879079" duration="1849000" />
-      <workItem from="1599810728899" duration="18268000" />
+      <workItem from="1599810728899" duration="18373000" />
+      <workItem from="1603698997717" duration="1646000" />
+      <workItem from="1603786522339" duration="4373000" />
+      <workItem from="1603807504827" duration="737000" />
+      <workItem from="1603967089212" duration="17047000" />
+      <workItem from="1604045379624" duration="4733000" />
+      <workItem from="1604051209583" duration="18453000" />
     </task>
     <task id="LOCAL-00001" summary="Premier commit">
       <created>1599725369370</created>
@@ -105,14 +155,25 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2338" y="199" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/0.0.1920.1080@1920.0.1920.1080" timestamp="1599829515874" />
-    <state x="2576" y="345" width="604" height="395" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599828415292">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="656" y="345" width="561" height="395" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604064386609">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state x="656" y="345" width="561" height="395" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1604064386609" />
     <state x="2576" y="345" width="604" height="395" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1920.1080/0.0.1920.1080@1920.0.1920.1080" timestamp="1599828415292" />
-    <state x="2663" y="299" width="430" height="486" key="FileChooserDialogImpl" timestamp="1599810725253">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="693" y="282" width="530" height="503" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1604067129155">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state x="693" y="282" width="530" height="503" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1604067129155" />
+    <state x="743" y="299" width="430" height="486" key="FileChooserDialogImpl" timestamp="1604050778503">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="743" y="299" width="430" height="486" key="FileChooserDialogImpl/0.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1603808702074" />
+    <state x="743" y="299" key="FileChooserDialogImpl/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1604050778503" />
     <state x="2663" y="299" width="430" height="486" key="FileChooserDialogImpl/1920.0.1920.1080/0.0.1920.1080@1920.0.1920.1080" timestamp="1599810725253" />
+    <state x="449" y="167" width="1022" height="732" key="SettingsEditor" timestamp="1603978677373">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="449" y="167" width="1022" height="732" key="SettingsEditor/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1603978677373" />
     <state width="498" height="445" key="SwitcherDM" timestamp="1599829387799">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -129,13 +190,36 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2670" y="457" width="420" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.0.1920.1080/0.0.1920.1080@1920.0.1920.1080" timestamp="1599725247237" />
-    <state x="2541" y="247" key="run.anything.popup" timestamp="1599835215285">
+    <state x="1917" y="0" width="1926" height="1083" maximized="true" key="dock-window-1" timestamp="1604063077640">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
+    <state x="1917" y="0" width="1926" height="1083" maximized="true" key="dock-window-1/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1604063077640" />
+    <state x="1920" y="0" width="1926" height="1083" maximized="true" key="dock-window-2" timestamp="1604067891050">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1920" y="0" width="1926" height="1083" maximized="true" key="dock-window-2/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1604067891050" />
+    <state x="2008" y="0" width="1512" height="963" key="dock-window-3" timestamp="1604067987780">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2008" y="0" width="1512" height="963" key="dock-window-3/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1604067987780" />
+    <state x="2326" y="0" width="1926" height="1083" maximized="true" key="dock-window-4" timestamp="1604073050121">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2326" y="0" width="1926" height="1083" maximized="true" key="dock-window-4/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1604073050121" />
+    <state x="1920" y="0" width="1926" height="1083" maximized="true" key="dock-window-5" timestamp="1604075592618">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1920" y="0" width="1926" height="1083" maximized="true" key="dock-window-5/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1604075592618" />
+    <state x="621" y="247" key="run.anything.popup" timestamp="1604069728458">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="621" y="247" key="run.anything.popup/0.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1603789020835" />
+    <state x="621" y="247" key="run.anything.popup/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1604069728458" />
     <state x="2541" y="247" key="run.anything.popup/1920.0.1920.1080/0.0.1920.1080@1920.0.1920.1080" timestamp="1599835215285" />
-    <state x="2543" y="239" key="search.everywhere.popup" timestamp="1599811624761">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="623" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1604075608015">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state x="623" y="239" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1604075608015" />
     <state x="2543" y="239" key="search.everywhere.popup/1920.0.1920.1080/0.0.1920.1080@1920.0.1920.1080" timestamp="1599811624761" />
   </component>
 </project>

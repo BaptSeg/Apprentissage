@@ -28546,12 +28546,19 @@ function InfosOfTask(_ref) {
       newPriority = _useState4[0],
       setNewPriority = _useState4[1];
 
+  var _useState5 = (0, _react.useState)(true),
+      _useState6 = _slicedToArray(_useState5, 2),
+      ModifsValidated = _useState6[0],
+      setModifsValidated = _useState6[1];
+
   function handleNewtitle(e) {
     setNewtitle(e.target.value);
+    IsModifsValid();
   }
 
   function handleNewPriority(e) {
     setNewPriority(e.target.value);
+    IsModifsValid();
   }
 
   function handleSubmit(e) {
@@ -28566,8 +28573,13 @@ function InfosOfTask(_ref) {
     });
   }
 
-  function isDisabled() {
-    return !(newPriority <= 10) && newPriority >= 0;
+  function IsModifsValid() {
+    if (newPriority <= 10 && newPriority >= 0 && newTitle) {
+      console.log("ok");
+      setModifsValidated(false);
+    } else {
+      setModifsValidated(true);
+    }
   }
 
   return /*#__PURE__*/_react.default.createElement("div", {
@@ -28609,7 +28621,7 @@ function InfosOfTask(_ref) {
   }, /*#__PURE__*/_react.default.createElement("button", {
     className: "btn btn-success",
     onClick: handleSubmit,
-    disabled: isDisabled
+    disabled: ModifsValidated
   }, "Valider les modifications")))));
 }
 
@@ -28728,8 +28740,6 @@ function TaskStore() {
       consultTache = _useState4[0],
       setConsultTache = _useState4[1];
 
-  console.log(consultTache);
-
   function addTaches(title) {
     var tache = {
       id: Math.max.apply(Math, taches.map(function (t) {
@@ -28838,7 +28848,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42939" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43527" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

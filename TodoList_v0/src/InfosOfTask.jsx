@@ -5,13 +5,16 @@ function InfosOfTask ({tache, handleClose, handleModify}) {
     // On défini deux états pour suivre les valeurs entré dans les inputs
     const [newTitle, setNewtitle] = useState(tache.title)
     const [newPriority, setNewPriority] = useState(tache.priority)
+    const [ModifsValidated ,setModifsValidated] = useState(true)
 
     function handleNewtitle(e) {
         setNewtitle(e.target.value)
+        IsModifsValid();
     }
 
     function handleNewPriority (e) {
         setNewPriority(e.target.value)
+        IsModifsValid();
     }
 
     function handleSubmit (e) {
@@ -23,8 +26,13 @@ function InfosOfTask ({tache, handleClose, handleModify}) {
         handleClose({consult: false, id: null})
     }
 
-    function isDisabled() {
-        return !(newPriority <= 10) && (newPriority >= 0)
+    function IsModifsValid() {
+        if ((newPriority <= 10) && (newPriority >= 0) && (newTitle)) {
+            console.log("ok");
+            setModifsValidated(false)
+        } else {
+            setModifsValidated(true)
+        }
     }
 
     return <div className="card">
@@ -42,7 +50,7 @@ function InfosOfTask ({tache, handleClose, handleModify}) {
                 <input className="form-control" type="number" min="0" max="10" name="priority" id="priority" placeholder="Une valeur entre 0 et 10" value={newPriority} onChange={handleNewPriority}/>
 
                 <div className="text-center mt-4">
-                    <button className="btn btn-success" onClick={handleSubmit} disabled={isDisabled}>Valider les modifications</button>
+                    <button className="btn btn-success" onClick={handleSubmit} disabled={ModifsValidated}>Valider les modifications</button>
                 </div>
             </div>
         </div>
